@@ -36,7 +36,7 @@ const App = () => {
   const [provider, setProvider] = useState()
   const [signer, setSigner] = useState()
   const [maxWallet, setMaxWallet] = useState(1)
-  const [chainId, setChainId] = useState(17000)
+  const [chainId, setChainId] = useState(11155111)
   const [tokenName, setTokenName] = useState('')
   const [tokenSymbol, setTokenSymbol] = useState('')
   const [tokenDescription, setTokenDescription] = useState('')
@@ -177,34 +177,35 @@ const App = () => {
           return false;
         }
       }
+      console.log("debug1");
       if (logoFile) {
         // const deployerBytes = utils.hexZeroPad(address, 32);
         // const timestamp = Math.floor(Date.now() / 1000);
         // const timestampBytes = utils.hexZeroPad(utils.hexlify(timestamp));
         // const combinedBytes = utils.concat([deployerBytes, timestampBytes]);
         // const salt = utils.keccak256(combinedBytes);
-        let predictAddress;
-        predictAddress = await readContract({
-          address: factoryAddress[chainId],
-          abi: TeleFunFactoryAbi,
-          functionName: 'getTeleFunAddress',
-          args: [
-            address,
-            web3Clients[chainId].utils.toWei(String(feeAmount + Number(depositAmount)), 'ether'),
-            [
-              tokenName,
-              tokenSymbol,
-              tokenDescription,
-              website,
-              twitter,
-              telegram,
-              discord
-            ],
-            maxWallet.toString(),
-            // salt
-          ],
-          chainId: chainId
-        })
+        // let predictAddress;
+        // predictAddress = await readContract({
+        //   address: factoryAddress[chainId],
+        //   abi: TeleFunFactoryAbi,
+        //   functionName: 'getTeleFunAddress',
+        //   args: [
+        //     address,
+        //     web3Clients[chainId].utils.toWei(String(feeAmount + Number(depositAmount)), 'ether'),
+        //     [
+        //       tokenName,
+        //       tokenSymbol,
+        //       tokenDescription,
+        //       website,
+        //       twitter,
+        //       telegram,
+        //       discord
+        //     ],
+        //     maxWallet.toString(),
+        //     // salt
+        //   ],
+        //   chainId: chainId
+        // })
         const gasPrice = await provider.getGasPrice()
         let create
         create = await writeContract({
@@ -228,7 +229,7 @@ const App = () => {
           gasPrice: (Number(gasPrice) * 2).toFixed(0),
           chainId: chainId
         })
-        let transactionPromises
+        // let transactionPromises
         if (isCheckedAdvanced) {
           const cookies = new Cookies();
           let refAddress
@@ -262,18 +263,18 @@ const App = () => {
 
           // await waitForContractDeployment(predictAddress);
 
-          transactionPromises = accounts.map(async (account) => {
-            const wallet = new Wallet(account.privateKey, provider)
-            const pumpContract = new Contract(predictAddress, TeleFunAbi, wallet)
-            const inputAmountInWei = web3Clients[chainId].utils.toWei(String(account.inputAmount), 'ether')
-            const tx = await pumpContract.buyToken(refAddress, { value: inputAmountInWei, gasPrice: (Number(gasPrice) * 1.5).toFixed(0), gasLimit: 5000000})
-            return await tx.wait()
-          })
+          // transactionPromises = accounts.map(async (account) => {
+          //   const wallet = new Wallet(account.privateKey, provider)
+          //   const pumpContract = new Contract(predictAddress, TeleFunAbi, wallet)
+          //   const inputAmountInWei = web3Clients[chainId].utils.toWei(String(account.inputAmount), 'ether')
+          //   const tx = await pumpContract.buyToken(refAddress, { value: inputAmountInWei, gasPrice: (Number(gasPrice) * 1.5).toFixed(0), gasLimit: 5000000})
+          //   return await tx.wait()
+          // })
         }
         await waitForTransaction({
           hash: create.hash
         })
-        await Promise.all(transactionPromises)
+        // await Promise.all(transactionPromises)
         let funAddresses;
         funAddresses = await readContract({
           address: factoryAddress[chainId],
@@ -296,27 +297,11 @@ const App = () => {
             .then(async res => {
               logoUrl = await res.json()
               logoUrl = logoUrl.fileInfo.filename
-              if (bannerFile) {
-                const formData = new FormData()
-                formData.append('file', bannerFile, presaleAddress)
-                fetch(imageUploadUrl + 'api/bannerUploads', {
-                  method: 'POST',
-                  body: formData
-                })
-                  .then(async res => {
-                    bannerUrl = await res.json()
-                    bannerUrl = bannerUrl.fileInfo.filename
-                    toast.success(
-                      `Successfully ${tokenName} TeleFun created`
-                    )
-                    const link = `/buy/?chain=${chainId}&address=${presaleAddress}`
-                    window.location.href = link
-                  })
-                  .catch(error => {
-                    setCreating(false)
-                    console.error('Error:', error)
-                  })
-              }
+              toast.success(
+                `Successfully ${tokenName} TeleFun created`
+              )
+              const link = `/buy/?chain=${chainId}&address=${presaleAddress}`
+              window.location.href = link
             })
             .catch(error => {
               setCreating(false)
@@ -570,7 +555,7 @@ const App = () => {
                               </section>
                             </section>
                           </section>
-                          {/* <section className="flex flex-col gap-4 w-[90%] sm:w-[45%]">
+                          <section className="flex flex-col gap-4 w-[90%] sm:w-[45%]">
                             <div className="LpBalance">
                               <p className="Text1">
                                 Network
@@ -580,14 +565,14 @@ const App = () => {
                             <section className="inputPanel">
                               <section className="inputPanelHeader">
                                 <div className="fairlaunch-allocation-buttons-container">
-                                  <button
+                                  {/* <button
                                     className={`${chainId === 17000 ? 'opacity-100' : 'opacity-30'}`}
                                     onClick={() => {
                                       setChainId(17000)
                                     }}
                                   >
                                     <img src={chainLogos[17000]} className='w-8' />
-                                  </button>
+                                  </button> */}
                                   <button
                                     className={`${chainId === 11155111 ? 'opacity-100' : 'opacity-30'}`}
                                     onClick={() => {
@@ -599,7 +584,7 @@ const App = () => {
                                 </div>
                               </section>
                             </section>
-                          </section> */}
+                          </section>
 
                         </div>
                         {/* <section className="flex flex-col gap-4 w-[90%]">

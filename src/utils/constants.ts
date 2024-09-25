@@ -3,11 +3,11 @@ import { mainnet, sepolia, holesky } from 'viem/chains'
 import Web3 from 'web3'
 
 export const multicallAddress = {
-    11155111: "0x02F74C9C857c4c77d4EE06480C204b34393E9df2",
+    11155111: "0x2166c19AD09e4C055e68726E47E2b9090C2c0dAe",
     17000: "0xfdFbb6076B1621d862CE5F61813391ACde8ac00E",
 };
 export const factoryAddress = {
-    11155111: "0xb601402bF2AE7Ee0EFd0d7E5FF459E6cEa184d29",
+    11155111: "0xE401d2aC9e52920059c43a975A42b9d8b1B29Ecb",
     17000: "0x02F74C9C857c4c77d4EE06480C204b34393E9df2",
 };
 export const contractAddress = "0x0000000000000000000000000000000000000000";
@@ -55,8 +55,8 @@ export const walletClient = createWalletClient({
 export const supportedChainIds = [holesky.id, sepolia.id]
 
 export const chainLogos = {
-    17000: '/eth.svg',
-    11155111: '/optimism.svg'
+    17000: '/optimism.svg',
+    11155111: '/eth.svg'
 }
 
 export const imageUrl = 'https://api.shitlordme.me/api/uploads/'

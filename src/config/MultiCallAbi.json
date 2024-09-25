@@ -24,16 +24,16 @@
 		"type": "event"
 	},
 	{
-		"inputs": [],
-		"name": "IShitlordPump",
-		"outputs": [
+		"inputs": [
 			{
-				"internalType": "contract ISHITLORDPUMP",
-				"name": "",
+				"internalType": "address",
+				"name": "_newFactory",
 				"type": "address"
 			}
 		],
-		"stateMutability": "view",
+		"name": "updateFactory",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -287,6 +287,19 @@
 	},
 	{
 		"inputs": [],
+		"name": "ITeleFun",
+		"outputs": [
+			{
+				"internalType": "contract ITELEFUN",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "owner",
 		"outputs": [
 			{
@@ -296,19 +309,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_newFactory",
-				"type": "address"
-			}
-		],
-		"name": "updateFactory",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

@@ -1,5 +1,36 @@
 [
 	{
+		"inputs": [
+			{
+				"internalType": "string[]",
+				"name": "tokenDatas",
+				"type": "string[]"
+			},
+			{
+				"internalType": "uint8",
+				"name": "maxBuyAmount",
+				"type": "uint8"
+			}
+		],
+		"name": "createTeleFun",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -26,31 +57,83 @@
 	{
 		"inputs": [
 			{
-				"internalType": "string[]",
-				"name": "tokenDatas",
-				"type": "string[]"
-			},
-			{
-				"internalType": "uint8",
-				"name": "maxBuyAmount",
-				"type": "uint8"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "salt",
-				"type": "bytes32"
-			}
-		],
-		"name": "createShitlordPump",
-		"outputs": [
-			{
 				"internalType": "address",
-				"name": "",
+				"name": "newOwner",
 				"type": "address"
 			}
 		],
-		"stateMutability": "payable",
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_teleFun",
+				"type": "address"
+			}
+		],
+		"name": "updateContributors",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_newFee",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint8",
+				"name": "_mainFee",
+				"type": "uint8"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_marketCap",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address payable",
+				"name": "_newDev",
+				"type": "address"
+			}
+		],
+		"name": "updateDatas",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_ethLp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenLp",
+				"type": "uint256"
+			}
+		],
+		"name": "updateVirtualLiquidity",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
 	},
 	{
 		"inputs": [],
@@ -127,45 +210,6 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "creator",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "ethAmount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "string[]",
-				"name": "tokenDatas",
-				"type": "string[]"
-			},
-			{
-				"internalType": "uint8",
-				"name": "maxBuyAmount",
-				"type": "uint8"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "salt",
-				"type": "bytes32"
-			}
-		],
-		"name": "getShitlordPumpAddress",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
 				"name": "_user",
 				"type": "address"
 			}
@@ -221,13 +265,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -235,7 +272,7 @@
 				"type": "address"
 			}
 		],
-		"name": "shitlordPumpAddresses",
+		"name": "teleFunAddresses",
 		"outputs": [
 			{
 				"internalType": "bool",
@@ -244,83 +281,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_shitlordPump",
-				"type": "address"
-			}
-		],
-		"name": "updateContributors",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_newFee",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint8",
-				"name": "_mainFee",
-				"type": "uint8"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_marketCap",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address payable",
-				"name": "_newDev",
-				"type": "address"
-			}
-		],
-		"name": "updateDatas",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_ethLp",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_tokenLp",
-				"type": "uint256"
-			}
-		],
-		"name": "updateVirtualLiquidity",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -372,9 +332,5 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
-	},
-	{
-		"stateMutability": "payable",
-		"type": "receive"
 	}
 ]
