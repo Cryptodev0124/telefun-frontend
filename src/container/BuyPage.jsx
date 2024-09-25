@@ -998,7 +998,7 @@ const App = () => {
                                         <div className="chat-eth-logo-container relative">
                                           <img src={avatar} className="chat-profile-avatar"
                                             onError={event => {
-                                              event.target.src = "/img/moonboy67.png"
+                                              event.target.src = "/img/profile-logo.png"
                                               event.onerror = null
                                             }} />
                                           &nbsp; &nbsp;

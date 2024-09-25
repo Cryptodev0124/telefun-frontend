@@ -177,7 +177,7 @@ const App = () => {
           return false;
         }
       }
-      console.log("debug1");
+      
       if (logoFile) {
         // const deployerBytes = utils.hexZeroPad(address, 32);
         // const timestamp = Math.floor(Date.now() / 1000);
@@ -226,9 +226,11 @@ const App = () => {
             maxWallet.toString(),
             // salt
           ],
-          gasPrice: (Number(gasPrice) * 2).toFixed(0),
+          // gasPrice: (Number(gasPrice) * 2).toFixed(0),
           chainId: chainId
         })
+        console.log("debug1", create);
+
         // let transactionPromises
         if (isCheckedAdvanced) {
           const cookies = new Cookies();
@@ -286,7 +288,6 @@ const App = () => {
         if (funAddresses)
           presaleAddress = funAddresses[funAddresses.length - 1];
         let logoUrl
-        let bannerUrl
         if (logoFile) {
           const formData = new FormData()
           formData.append('file', logoFile, presaleAddress)

@@ -235,7 +235,7 @@ const TopBar = (animate) => {
                           height="32px"
                           alt=""
                           onError={event => {
-                            event.target.src = "/img/moonboy67.png"
+                            event.target.src = "/img/profile-logo.png"
                             event.onerror = null
                           }}
                         />
@@ -285,7 +285,7 @@ const TopBar = (animate) => {
                           height="32px"
                           alt=""
                           onError={event => {
-                            event.target.src = "/img/moonboy67.png"
+                            event.target.src = "/img/profile-logo.png"
                             event.onerror = null
                           }}
                         />

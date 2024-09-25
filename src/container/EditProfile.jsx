@@ -14,7 +14,7 @@ import TopBar from '../components/TopBar'
 const EditProfile = () => {
   const history = useHistory()
   const [userName, setUserName] = useState('@moonboy67')
-  const [userAvatar, setUserAvatar] = useState('/img/moonboy67.png')
+  const [userAvatar, setUserAvatar] = useState('/img/profile-logo.png')
 
   return (
     <div>

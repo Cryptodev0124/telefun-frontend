@@ -59,13 +59,13 @@ export const chainLogos = {
     11155111: '/eth.svg'
 }
 
-export const imageUrl = 'https://api.shitlordme.me/api/uploads/'
+export const imageUrl = 'https://telefun-backend.onrender.com/api/uploads/'
 
-export const apiUrl = 'https://api.shitlordme.me'
+export const apiUrl = 'https://telefun-backend.onrender.com'
 
 export const ethPriceApiUrl = 'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD'
 
-export const imageUploadUrl = 'https://api.shitlordme.me/'
+export const imageUploadUrl = 'https://telefun-backend.onrender.com'
 
 export default function formatNumber(number) {
     if (number >= 1000000) {
