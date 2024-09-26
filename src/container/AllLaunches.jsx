@@ -19,6 +19,7 @@ import { useSpring, animated } from 'react-spring'
 import Cookies from 'universal-cookie';
 import { multicallAddress, imageUrl, defaultAddress, ethPriceApiUrl, supportedChainIds, chainLogos } from '../utils/constants.ts'
 import Slider from '../components/Slider.jsx'
+import BottomMenu from '../components/BottomMenu.jsx'
 
 const App = () => {
   const { chain } = useNetwork()
@@ -738,6 +739,7 @@ const App = () => {
               )
             }
           </div>
+          <BottomMenu />
         </div>
       </div>
       <Footer />

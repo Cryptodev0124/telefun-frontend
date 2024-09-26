@@ -18,6 +18,7 @@ import TradeCard from '../components/TradeCard.jsx'
 import BalanceCard from '../components/BalanceCard.jsx'
 import LaunchpadCard from '../components/LaunchpadCard.jsx'
 import { multicallAddress, imageUrl, apiUrl, imageUploadUrl, ethPriceApiUrl, supportedChainIds, chainLogos, scanLinks } from '../utils/constants.ts'
+import BottomMenu from '../components/BottomMenu.jsx'
 
 const Profile = () => {
   let [profileAddress] = useQueryParam('address', StringParam)
@@ -663,6 +664,7 @@ const Profile = () => {
             </section>
 
           </div>
+          <BottomMenu />
         </div>
       </div>
       <Footer />

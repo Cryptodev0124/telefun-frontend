@@ -10,6 +10,7 @@ import '../styles/MainContainer.css'
 import Footer from '../components/Footer'
 import { ReactComponent as BackIcon } from '../icons/back.svg'
 import TopBar from '../components/TopBar'
+import BottomMenu from '../components/BottomMenu'
 
 const EditProfile = () => {
   const history = useHistory()
@@ -42,8 +43,7 @@ const EditProfile = () => {
                         <b>Edit Profile</b>
                       </p>
                     </div>
-                    <div>
-                    </div>
+                    <div></div>
                     <div>
                       <p className="profile-text">Profile photo</p>
                     </div>
@@ -78,6 +78,7 @@ const EditProfile = () => {
                 <br />
               </>
             </section>
+            <BottomMenu />
           </div>
         }
       </div>

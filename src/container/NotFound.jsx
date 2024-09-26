@@ -8,6 +8,7 @@ import '../styles/MainContainer.css'
 import Footer from '../components/Footer'
 import TopBar from '../components/TopBar'
 import { Link } from 'react-router-dom'
+import BottomMenu from '../components/BottomMenu'
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
               </section>
             </>
           </div>
+          <BottomMenu />
         </div>
       </div>
       <Footer />

@@ -22,6 +22,7 @@ import TopBar from '../components/TopBar.jsx'
 import LogoUploadBox from '../components/LogoUploadBox.jsx'
 import BannerUploadBox from '../components/BannerUploadBox.jsx'
 import { factoryAddress, web3Clients, imageUploadUrl, ethPriceApiUrl, chainLogos, publicClient, defaultAddress } from '../utils/constants.ts'
+import BottomMenu from '../components/BottomMenu.jsx';
 
 const App = () => {
   const { chain } = useNetwork();
@@ -864,6 +865,7 @@ const App = () => {
                 </>
               </section>
             </div>
+            <BottomMenu />
           </div>
         }
       </div>

@@ -31,6 +31,7 @@ import CustomRadioButton from '../components/CustomRadioButton'
 import rot13 from '../../utils/encode.ts'
 import { Link } from 'react-router-dom'
 import { WETHAddress, routerAddress, defaultAddress, web3Clients, imageUrl, apiUrl, ethPriceApiUrl, scanLinks, scanApiLinks, apiKeys } from '../utils/constants.ts'
+import BottomMenu from '../components/BottomMenu.jsx';
 
 const App = () => {
   let [addressDatas] = useQueryParam('address', StringParam)
@@ -1347,6 +1348,7 @@ const App = () => {
 
             </div>
           </div>
+          <BottomMenu />
         </div>
       </div>
       <Footer />

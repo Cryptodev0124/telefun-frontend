@@ -2797,6 +2797,11 @@ a {
   margin: 4px;
 }
 
+.left-bar-link:focus {
+  background-color: rgba(228, 207, 207, 0.1);
+  border-radius: 12px;
+}
+
 @media screen and (max-width: 1024px) {
   .GlobalContainer {
     padding-left: 0px;
