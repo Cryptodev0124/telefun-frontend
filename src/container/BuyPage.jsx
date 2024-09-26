@@ -52,7 +52,7 @@ const App = () => {
   const [tokenSymbol, setTokenSymbol] = useState('')
   const [tokenAddress, setTokenAddress] = useState('')
   const tokenLogo = imageUrl + TeleFunAddress + '-logo.png'
-  const tokenBanner = imageUrl + TeleFunAddress + '-banner.png'
+  const tokenBanner = imageUrl + TeleFunAddress + '-logo.png'
   const [virtualLp, setVirtualLiquidiity] = useState(0)
   const [maxBuyAmount, setMaxBuyAmount] = useState(0)
   const [chatHistory, setChatHistory] = useState([])
@@ -119,7 +119,7 @@ const App = () => {
   } else {
     refAddress = defaultAddress
   }
-  const BASE_URL = 'https://pump.TeleFunme.me/buy/?chain=' + chainId + '&address=' + TeleFunAddress
+  const BASE_URL = 'https://TeleFun.com/buy/?chain=' + chainId + '&address=' + TeleFunAddress
   const referlink = address ? `${BASE_URL}/?ref=${rot13(address)}` : `${BASE_URL}/?ref=`
 
   const copyAddress = address => async e => {

@@ -73,7 +73,7 @@ const App = () => {
               const name = otherInfo[0][i];
               const symbol = otherInfo[1][i];
               const logoUrl = `${imageUrl}${contractAddress}-logo.png`;
-              const bannerUrl = `${imageUrl}${contractAddress}-banner.png`;
+              const bannerUrl = `${imageUrl}${contractAddress}-logo.png`;
               const blockchainLogoUrl = chainLogos[chainId];
               const devAddress = mainInfo[6][i];
               const risingPercent = Number(otherInfo[6][i]) / 100;
@@ -478,7 +478,7 @@ const App = () => {
     >
       <div className="bg-[#2f6434] rounded-[25px] max-w-[480px] p-[24px]">
         <h1 className='text-center text-[#2fcdf3] text-xl pb-2 font-extrabold'>How it works</h1>
-        <p className='text-white'>pump.TeleFun.me is a fun launchpad website that allows anyone to easily trade or create their own memecoin on the multichain in minutes.</p>
+        <p className='text-white'>TeleFun is a fun launchpad website that allows anyone to easily trade or create their own memecoin on the multichain in minutes.</p>
         <p className='text-white'>(Fair Launch) Memecoins created via our platform have no presale or team allocations. Everyone has equal chance to buy the coin.</p>
         <p className='text-white'>Disclaimer: trading these tokens is highly risky / speculative. Do not invest more than you can afford to lose. Anyone can list a token, listing does not mean we endorse the token. Token prices can be extremely volatile. Be sure to follow any legal guidelines that your country specifies.</p>
         <h2 className='py-2 text-lg font-bold text-[#2fcdf3]'>How to participate:</h2>

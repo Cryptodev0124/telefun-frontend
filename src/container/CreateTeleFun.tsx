@@ -229,7 +229,7 @@ const App = () => {
           // gasPrice: (Number(gasPrice) * 2).toFixed(0),
           chainId: chainId
         })
-        console.log("debug1", create);
+        console.log("isCheckedAdvanced", isCheckedAdvanced);
 
         // let transactionPromises
         if (isCheckedAdvanced) {

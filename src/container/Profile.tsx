@@ -90,7 +90,7 @@ const Profile = () => {
                 const liquidity = virtualLpAmounts
                 const name = otherInfo[0][i]
                 let logoUrl = imageUrl + contractAddress + '-logo.png'
-                let bannerUrl = imageUrl + contractAddress + '-banner.png'
+                let bannerUrl = imageUrl + contractAddress + '-logo.png'
                 let blockchainLogoUrl = chainLogos[chainId]
                 let devAddress = mainInfo[6][i]
                 let dexAddress = 'https://app.uniswap.org/swap'
