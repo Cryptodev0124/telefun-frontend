@@ -43,13 +43,13 @@ const App = () => {
         const ethPrice = ethPriceData.USD;
   
         for (const chainId of supportedChainIds) {
+          console.log("mainInfo");
           const mainInfo = await readContract({
             address: multicallAddress[chainId],
             abi: MultiCallAbi,
             functionName: 'getMainInfo',
             chainId: chainId
           });
-  
           const otherInfo = await readContract({
             address: multicallAddress[chainId],
             abi: MultiCallAbi,
@@ -102,7 +102,7 @@ const App = () => {
                 blockchainLogoUrl,
                 risingPercent
               };
-  
+              console.log("chadData", chadData);
               // Push each item directly into the state
               setTeleFunListData(prevState => [...prevState, chadData]);
             }

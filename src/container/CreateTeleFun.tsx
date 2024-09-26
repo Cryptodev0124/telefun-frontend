@@ -298,6 +298,7 @@ const App = () => {
             .then(async res => {
               logoUrl = await res.json()
               logoUrl = logoUrl.fileInfo.filename
+              console.log("debug->here")
               toast.success(
                 `Successfully ${tokenName} TeleFun created`
               )

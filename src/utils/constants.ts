@@ -3,7 +3,7 @@ import { mainnet, sepolia, holesky } from 'viem/chains'
 import Web3 from 'web3'
 
 export const multicallAddress = {
-    11155111: "0x2166c19AD09e4C055e68726E47E2b9090C2c0dAe",
+    11155111: "0x911cF4ED824a108F7D40a855e617C78E519A4119",
     17000: "0xfdFbb6076B1621d862CE5F61813391ACde8ac00E",
 };
 export const factoryAddress = {
@@ -52,7 +52,7 @@ export const walletClient = createWalletClient({
     transport: http()
   })
 
-export const supportedChainIds = [holesky.id, sepolia.id]
+export const supportedChainIds = [sepolia.id]
 
 export const chainLogos = {
     17000: '/optimism.svg',

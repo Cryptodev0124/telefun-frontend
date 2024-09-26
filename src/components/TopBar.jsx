@@ -422,7 +422,7 @@ const TopBar = (animate) => {
             </div>
           </div>
           {isExpanded && <div className='relative bg-[#17134e] rounded-[25px] flex flex-col gap-[10px] px-[32px] pt-[40px] pb-[160px] sm:p-[48px] w-full items-center overflow-hidden' style={{ transform: "none", transformOrigin: "50% 50% 0px" }}>
-            <div className='flex flex-col gap-4' style={{ fontFamily: "Dela Gothic One" }}>
+            {/* <div className='flex flex-col gap-4' style={{ fontFamily: "Dela Gothic One" }}>
               <Link to="/AllLaunches" className="left-bar-link">
                 <span
                   className={
@@ -456,16 +456,23 @@ const TopBar = (animate) => {
                   Profile
                 </span>
               </Link>
-            </div>
-            <div className='sm:hidden flex flex-row gap-4'>
+            </div> */}
+            <div className='sm:hidden flex flex-col gap-4 items-center' style={{ fontFamily: "Dela Gothic One" }}>
               <Link to="#" target="_blank" className="p-2">
-                <img src={iconX1} className='w-[24px] h-[24px]' />
+                {/* <img src={iconX1} className='w-[24px] h-[24px]' /> */}
+                <span className='text-[20px] uppercase text-[#f8ffe8] hover:text-[#e2fea5]'>Telegram</span>
               </Link>
               <Link to="#" target="_blank" className="p-2">
-                <img src={iconTg1} className='w-[24px] h-[24px]' />
+                {/* <img src={iconTg1} className='w-[24px] h-[24px]' /> */}
+                <span className='text-[20px] uppercase text-[#f8ffe8] hover:text-[#e2fea5]'>Twitter</span>
               </Link>
               <Link to='#' target="_blank" className="p-2">
-                <img src={iconChart1} className='w-[24px] h-[24px]' />
+                {/* <img src={iconChart1} className='w-[24px] h-[24px]' /> */}
+                <span className='text-[20px] uppercase text-[#f8ffe8] hover:text-[#e2fea5]'>Whitepaper</span>
+              </Link>
+              <Link to='#' target="_blank" className="p-2">
+                {/* <img src={iconChart1} className='w-[24px] h-[24px]' /> */}
+                <span className='text-[20px] uppercase text-[#f8ffe8] hover:text-[#e2fea5]'>Buy $TFUN</span>
               </Link>
             </div>
             <div className='h-[240px] sm:h-[350px] absolute right-[-57px] bottom-[-72px] sm:right-[-97px] sm:bottom-[-115px]' style={{ transform: "rotate(-34deg)", transformOrigin: "50% 50% 0px", aspectRatio: "1.0713153724247226 / 1" }}>
