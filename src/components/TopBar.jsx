@@ -379,7 +379,7 @@ const TopBar = (animate) => {
                   <img src={iconChart} className='w-[24px] h-[24px]' />
                 </Link>
               </div>
-              {/* <div className="navConnectButtonBox">
+              <div className="navConnectButtonBox">
                 {!isConnected ? (
                   <>
                     <button
@@ -416,8 +416,8 @@ const TopBar = (animate) => {
                     </div>
                   </section>
                 )}
-              </div> */}
-              <ConnectButton />
+              </div>
+              {/* <ConnectButton /> */}
               <button className='bg-black hover:bg-[#222] rounded-full p-2 flex lg:hidden' onClick={handleHamburgerClick}>
                 <img src={isExpanded ? iconCross : iconHamburger} className='w-[32px] h-[32px]' />
               </button>
