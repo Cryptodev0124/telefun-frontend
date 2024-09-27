@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import ConnectButton from './ConnectButton.tsx'
 import iconHamburger from '../icons/hamburger.svg'
 import iconCross from '../icons/cross-icon.svg'
 import iconTg from '../icons/tg.svg'
@@ -378,7 +379,7 @@ const TopBar = (animate) => {
                   <img src={iconChart} className='w-[24px] h-[24px]' />
                 </Link>
               </div>
-              <div className="navConnectButtonBox">
+              {/* <div className="navConnectButtonBox">
                 {!isConnected ? (
                   <>
                     <button
@@ -415,7 +416,8 @@ const TopBar = (animate) => {
                     </div>
                   </section>
                 )}
-              </div>
+              </div> */}
+              <ConnectButton />
               <button className='bg-black hover:bg-[#222] rounded-full p-2 flex lg:hidden' onClick={handleHamburgerClick}>
                 <img src={isExpanded ? iconCross : iconHamburger} className='w-[32px] h-[32px]' />
               </button>
