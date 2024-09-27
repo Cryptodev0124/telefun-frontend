@@ -43,7 +43,7 @@ const BottomMenu = () => {
                 Deploy
               </span>
             </Link>
-            <Link to="/AllLaunches" className="left-bar-link" style={currentPath === '/AllLaunches' ? { background: "#00ee0030", borderRadius: "12px" } : {background: "transparent"} }>
+            <Link to="/AllLaunches" className="left-bar-link" style={currentPath === '/' || currentPath === '/AllLaunches' ? { background: "#00ee0030", borderRadius: "12px" } : {background: "transparent"} }>
               <span
                 className={
                   currentPath === '/' || currentPath === '/AllLaunches'

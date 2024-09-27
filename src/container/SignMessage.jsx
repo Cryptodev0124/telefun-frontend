@@ -4,20 +4,21 @@ import { useSignMessage, useAccount } from 'wagmi'
 import { recoverMessageAddress } from 'viem'
 import { apiUrl } from '../utils/constants.ts'
 
-export function SignMessage({
-  TeleFunAddress,
-  sender,
-  content,
-  timestamp
-}) {
-  const { data: signMessageData, isLoading, signMessage, variables, reset } = useSignMessage()
+export function SignMessage({ TeleFunAddress, sender, content, timestamp }) {
+  const {
+    data: signMessageData,
+    isLoading,
+    signMessage,
+    variables,
+    reset
+  } = useSignMessage()
   const { address } = useAccount()
   React.useEffect(() => {
-    ; (async () => {
+    ;(async () => {
       if (variables?.message && signMessageData) {
         const recoveredAddress = await recoverMessageAddress({
           message: variables?.message,
-          signature: signMessageData,
+          signature: signMessageData
         })
         if (recoveredAddress) {
           const sendData = {
@@ -36,8 +37,8 @@ export function SignMessage({
             redirect: 'error',
             body: JSON.stringify(sendData)
           })
-          reset();
-          document.getElementById("message").value = "";
+          reset()
+          document.getElementById('message').value = ''
           if (response.status !== 200) {
             const { error } = await response.json()
             throw new Error(error)
@@ -49,7 +50,7 @@ export function SignMessage({
 
   return (
     <form
-      onSubmit={(event) => {
+      onSubmit={event => {
         event.preventDefault()
         const formData = new FormData(event.target)
         const message = formData.get('message')
@@ -63,12 +64,21 @@ export function SignMessage({
           id="message"
           name="message"
           placeholder="Type your message here"
-          className='rounded-[25px] p-6 text-white bg-[#192d1c]'
+          className="rounded-[25px] p-6 text-white bg-[#192d1c]"
         />
       </div>
-      <button disabled={isLoading || address === undefined} className="SendButton rounded-full text-[#222] py-2">
-        {address === undefined ? 'Connect Wallet First' : isLoading ? 'Check Wallet' : 'Send Message'}
-      </button>
+      {address === undefined ? (
+        <p style={{display: "flex", justifyContent: "center"}}> Please Connect Wallet First</p>
+      ) : (
+        <button
+          disabled={isLoading || address === undefined}
+          className="SendButton rounded-full text-[#222] py-2"
+        >
+          {isLoading
+            ? 'Check Wallet'
+            : 'Send Message'}
+        </button>
+      )}
     </form>
   )
 }

@@ -1086,7 +1086,7 @@ const App = () => {
                   :
                   <div className="claim-card p-6">
                     <header className="flex justify-between">
-                      <span className="text-white text-[20px] font-bold">Trade on Uniswap via Pump</span>
+                      <span className="text-white text-[20px] font-bold">Trade on Uniswap via TeleFun</span>
                     </header>
                     <section className="flex flex-col gap-6 mt-4">
                       <div className="swap-cards-container ">
